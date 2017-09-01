@@ -2,12 +2,14 @@
 .idea
 *.iml
 out
-gen### Go template
+gen
+# Go template
 # Binaries for programs and plugins
 *.exe
 *.dll
 *.so
 *.dylib
+vendor
 
 # Test binary, build with `go test -c`
 *.test

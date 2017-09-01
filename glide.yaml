@@ -1,0 +1,5 @@
+package: my-project/homepage-backend
+import:
+- package: github.com/PuerkitoBio/goquery
+- package: github.com/gorilla/context
+- package: github.com/gorilla/sessions

@@ -1,0 +1,19 @@
+hash: b4519cc4ee9277d77d0741815a19c599db8217b9834ba9ba058a5de36ecda619
+updated: 2017-09-01T14:48:15.52480332+08:00
+imports:
+- name: github.com/andybalholm/cascadia
+  version: 349dd0209470eabd9514242c688c403c0926d266
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/securecookie
+  version: e59506cc896acb7f7bf732d4fdf5e25f7ccd8983
+- name: github.com/gorilla/sessions
+  version: b61c93cb7f67533c8bfbb5ea450efc07e5833c5e
+- name: github.com/PuerkitoBio/goquery
+  version: ce645ea5e67a713599b7415f21f0786451fa9554
+- name: golang.org/x/net
+  version: 66aacef3dd8a676686c7ae3716979581e8b03c47
+  subpackages:
+  - html
+  - html/atom
+testImports: []

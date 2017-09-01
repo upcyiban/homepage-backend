@@ -2,10 +2,12 @@ package yb
 
 import (
 	"testing"
-	"../configuration"
+
+	"github.com/homepage-backend/configuration"
 )
+
 func TestLogin(t *testing.T) {
-	c := Login(configuration.Account,configuration.Password)
+	c := Login(configuration.Account, configuration.Password)
 	if !CheckLogin(c) {
 		t.Error("login failed")
 	}
