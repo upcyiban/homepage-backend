@@ -175,12 +175,20 @@ func HandleFileUpload(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w,`{"code":6,"message":"图片上传成功","image_url":"%s"}`,configuration.ImageUrlFront+newFileName)
 	}
 }
+func UpdateYBDate(w http.ResponseWriter, r *http.Request){
+	allowCORS(w)
+	if login,_ := checkLogin(w,r); login == true{
+		yb.UpdateYBData()
+		fmt.Fprintf(w,`{"code":7, "message":"抓取数据更新成功"}`)
+	}
+}
 func main(){
-	go yb.UpdateYBData()
+	// go yb.UpdateYBData()
 	http.HandleFunc("/homepage/login",Login)
 	http.HandleFunc("/homepage/login/check",CheckLogin)
 	http.HandleFunc("/homepage/data",DataSubmit)
 	http.HandleFunc("/homepage/image",HandleFileUpload)
+	http.HandleFunc("/homepage/updateybdata",UpdateYBDate)
 	log.Printf("启动服务 : localhost%s\n",configuration.ServerPort)
 	log.Printf("图片存储目录 : %s\n",configuration.ImageUrlServer)
 	log.Printf("数据存储目录 : %s\n",configuration.DataUrl)

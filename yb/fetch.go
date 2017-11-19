@@ -1,7 +1,6 @@
 package yb
 
 import (
-	"time"
 	"../configuration"
 	"../ybtempl"
 	"io/ioutil"
@@ -60,13 +59,10 @@ func UpdateData(c *http.Client){
 	log.Println("数据更新完成")
 }
 func UpdateYBData(){
-	for true{
-		log.Println("登陆公共账号")
-		c := Login(configuration.Account,configuration.Password)
-		if CheckLogin(c) {
-			log.Println("登陆成功")
-			UpdateData(c)
-			time.Sleep(configuration.IntervalHours*time.Hour)
-		}
+	log.Println("登陆公共账号")
+	c := Login(configuration.Account,configuration.Password)
+	if CheckLogin(c) {
+		log.Println("登陆成功")
+		UpdateData(c)
 	}
 }
